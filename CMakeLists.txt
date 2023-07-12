@@ -6,7 +6,7 @@ project(AutoDiff)
 
 file(GLOB_RECURSE SOURCES ${CMAKE_SOURCE_DIR}/libautodiff/*.cpp)
 
-list(REMOVE_ITEM SOURCES ${CMAKE_SOURCE_DIR}/libautodiff/*.test.cpp)
+list(FILTER SOURCES EXCLUDE REGEX ".*\.test\.cpp")
 
 add_library(AutoDiff SHARED ${SOURCES})
 
